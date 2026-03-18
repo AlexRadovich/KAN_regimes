@@ -6,7 +6,9 @@ data/raw/
 data/processed/
 
 # Model weights
-models/
+# Only ignore large pytorch weight files, not small models
+models/*.pt
+models/*.bin
 
 # Jupyter notebook checkpoints — auto-generated, not useful to track
 .ipynb_checkpoints/
