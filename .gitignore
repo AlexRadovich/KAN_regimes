@@ -1,0 +1,19 @@
+# Virtual environment — never commit this, it's huge and machine-specific
+venv/
+
+# Data files — too large for git, others can recreate with fetch_data()
+data/raw/
+data/processed/
+
+# Model weights
+models/
+
+# Jupyter notebook checkpoints — auto-generated, not useful to track
+.ipynb_checkpoints/
+
+# Python cache files — auto-generated when Python runs your code
+__pycache__/
+*.pyc
+
+# Mac system files — created automatically by macOS, irrelevant to the project
+.DS_Store
