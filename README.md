@@ -6,9 +6,9 @@ Using Kolmogorov-Arnold Networks (KANs) to build an interpretable, regime-condit
  
 ## Motivation
  
-Most ML trading strategies treat all market conditions the same — they train one model on everything and hope it generalizes. But markets have distinct personalities: calm bull runs, choppy sideways periods, and high-volatility crises all have different statistical properties and different predictive signals.
+Most ML trading strategies treat all market conditions the same. They train one model on everything and hope it generalizes. But markets have distinct personalities: calm bull runs, choppy sideways periods, and high-volatility crises all have different statistical properties and different predictive signals.
  
-This project tests whether explicitly modeling those regimes — and training a separate forecasting model for each one — produces more interpretable and robust predictions than a single global model.
+This project tests whether explicitly modeling those regimes, and training a separate forecasting model for each one, produces more interpretable and robust predictions than a single global model.
  
 ---
  
@@ -16,7 +16,7 @@ This project tests whether explicitly modeling those regimes — and training a 
  
 **Step 1 — Feature engineering across four ETFs**
  
-Rather than looking at one asset in isolation, the model ingests daily data across SPY (S&P 500), QQQ (Nasdaq 100), GLD (gold), and TLT (long-term Treasuries). For each asset it computes daily return, rolling 20-day volatility, 20-day momentum, and RSI — 16 features total. The multi-asset design captures cross-market dynamics that single-asset models miss.
+Rather than looking at one asset in isolation, the model ingests daily data across SPY (S&P 500), QQQ (Nasdaq 100), GLD (gold), and TLT (long-term Treasuries). For each asset it computes daily return, rolling 20-day volatility, 20-day momentum, and RSI for a total of 16 features. The multi-asset design captures cross-market dynamics that single-asset models miss.
  
 **Step 2 — Unsupervised regime detection via Hidden Markov Model**
  
