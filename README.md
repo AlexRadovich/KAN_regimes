@@ -6,7 +6,7 @@ A regime-conditional equity return forecasting system built on Kolmogorov-Arnold
 
 ## The core idea
 
-Most ML models applied to markets train one model on everything — bull runs, crises, low-volatility chop — and implicitly assume the data-generating process is stationary. It isn't. The statistical relationships between features and returns shift meaningfully across market regimes. Equity momentum has different predictive power in a high-volatility drawdown than it does in a calm trending environment.
+Most ML models applied to markets train only one model and implicitly assume the data-generating process is stationary. But the statistical relationships between features and returns shift meaningfully across market regimes. Equity momentum has different predictive power in a high-volatility drawdown than it does in a calm trending environment.
 
 This project tests a direct response to that: first identify which regime the market is in using a Hidden Markov Model, then route to a specialist Kolmogorov-Arnold Network trained *only* on days that resembled that regime. The KAN architecture is the key choice here — because KANs replace fixed activation functions with learnable spline curves, the model's learned relationships are directly visualizable. You can literally plot how each input feature affects the output prediction. The goal wasn't to beat buy-and-hold; it was to build something interpretable enough that you can *see* what the model learned, and then ask whether what it learned makes economic sense.
 
